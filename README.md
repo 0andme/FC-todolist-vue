@@ -71,7 +71,7 @@ https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos
 ```
 
 ```plaintext
-@returns {Object[]} - 조회된 나의 할 일 목록
+@return {Object[]} - 조회된 나의 할 일 목록
 ```
 
 요청 데이터 예시:
@@ -194,7 +194,7 @@ https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/:todoId
 @param {String} title - 할 일의 제목 (필수)
 @param {Boolean} done - 할 일의 완료 여부 (필수)
 @param {Number} order - 할 일의 순서 (필수)
-@returns {Object} - 수정된 할 일 항목 객체  
+@return {Object} - 수정된 할 일 항목 객체  
 ```
 
 요청 데이터 예시:
@@ -230,7 +230,7 @@ https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/:todoId
 ```
 
 ```plaintext
-@returns {Boolean} - 할 일 항목의 삭제 여부  
+@return {Boolean} - 할 일 항목의 삭제 여부  
 ```
 
 요청 데이터 예시:
