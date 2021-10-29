@@ -74,13 +74,13 @@ https://us-central1-heropy-api.cloudfunctions.net/api/todos
 @returns {Object[]} - 조회된 나의 할 일 목록
 ```
 
-요청 예시:
+요청 데이터 예시:
 
 ```js
 undefined
 ```
 
-응답 예시:
+응답 데이터 예시:
 
 ```json
 [
@@ -125,7 +125,7 @@ https://us-central1-heropy-api.cloudfunctions.net/api/todos/reorder
 @return {Boolean} - 순서 변경 여부
 ```
 
-요청 예시:
+요청 데이터 예시:
 
 ```json
 {
@@ -138,7 +138,7 @@ https://us-central1-heropy-api.cloudfunctions.net/api/todos/reorder
 }
 ```
 
-응답 예시:
+응답 데이터 예시:
 
 ```json
 true
@@ -159,7 +159,7 @@ https://us-central1-heropy-api.cloudfunctions.net/api/todos
 @return {Object} - 생성된 할 일 항목 객체 
 ```
 
-요청 예시: 
+요청 데이터 예시: 
 
 ```json
 {
@@ -168,7 +168,7 @@ https://us-central1-heropy-api.cloudfunctions.net/api/todos
 }
 ```
 
-응답 예시:
+응답 데이터 예시:
 
 ```json
 {
@@ -197,7 +197,7 @@ https://us-central1-heropy-api.cloudfunctions.net/api/todos/:todoId
 @returns {Object} - 수정된 할 일 항목 객체  
 ```
 
-요청 예시:
+요청 데이터 예시:
 
 ```json
 {
@@ -207,7 +207,7 @@ https://us-central1-heropy-api.cloudfunctions.net/api/todos/:todoId
 }
 ```
 
-응답 예시:
+응답 데이터 예시:
 
 ```json
 {
@@ -233,13 +233,13 @@ https://us-central1-heropy-api.cloudfunctions.net/api/todos/:todoId
 @returns {Boolean} - 할 일 항목의 삭제 여부  
 ```
 
-요청 예시:
+요청 데이터 예시:
 
 ```js
 undefined
 ```
 
-응답 예시:
+응답 데이터 예시:
 
 ```json
 true
