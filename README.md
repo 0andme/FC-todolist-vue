@@ -41,6 +41,26 @@ API 사용에 대해 궁금한 점은 슬랙 '질의응답' 채널에 질문 남
 }
 ```
 
+API 사용 예시:
+
+```js
+async function createTodo() {
+  const { data } = await axios({
+    url: 'https://us-central1-heropy-api.cloudfunctions.net/api/todos',
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json',
+      'apikey': 'FcKdtJs202110',
+      'username': 'ParkYoungWoong'
+    },
+    data: {
+      "title": "할 일 관리 프로젝트 과제 PR 생성"
+    }
+  })
+  console.log(data)
+}
+```
+
 ### 목록 조회
 
 전체 할 일 목록을 조회합니다.
