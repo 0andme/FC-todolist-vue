@@ -3,7 +3,7 @@
 API 사용에 대해 궁금한 점은 슬랙 '질의응답' 채널에 질문 남겨주세요!
 
 - 과제 기간: 10월 31일(일) ~ 11월 5일(금)
-- 리뷰 기간: 11월 5일(금) ~ 11월 10일(수) 
+- 리뷰 기간: 11월 5일(금) ~ 11월 10일(수)
 
 ## 요구사항
 
@@ -27,7 +27,7 @@ API 사용에 대해 궁금한 점은 슬랙 '질의응답' 채널에 질문 남
 
 ## API 사용법
 
-- 요청 주소(End point): `https://us-central1-heropy-api.cloudfunctions.net/api/todos`
+- 요청 주소(Endpoint): `https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos`
 
 모든 API 요청(Request) `headers`에 다음 정보가 꼭 포함되어야 합니다.<br>
 `username`은 다른 사람과 겹치지 않도록 주의하세요!<br>
@@ -46,7 +46,7 @@ API 사용 예시:
 ```js
 async function createTodo() {
   const { data } = await axios({
-    url: 'https://us-central1-heropy-api.cloudfunctions.net/api/todos',
+    url: 'https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos',
     method: 'POST',
     headers: {
       'content-type': 'application/json',
@@ -67,7 +67,7 @@ async function createTodo() {
 
 ```curl
 curl -X 'GET' \ 
-https://us-central1-heropy-api.cloudfunctions.net/api/todos
+https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos
 ```
 
 ```plaintext
@@ -116,8 +116,8 @@ undefined
 할 일 목록의 순서를 변경합니다.
 
 ```curl
-curl -X 'POST' \ 
-https://us-central1-heropy-api.cloudfunctions.net/api/todos/reorder
+curl -X 'PUT' \ 
+https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/reorder
 ```
 
 ```plaintext
@@ -150,7 +150,7 @@ true
 
 ```curl
 curl -X 'POST' \ 
-https://us-central1-heropy-api.cloudfunctions.net/api/todos
+https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos
 ```
 
 ```plaintext
@@ -159,7 +159,7 @@ https://us-central1-heropy-api.cloudfunctions.net/api/todos
 @return {Object} - 생성된 할 일 항목 객체 
 ```
 
-요청 데이터 예시: 
+요청 데이터 예시:
 
 ```json
 {
@@ -187,7 +187,7 @@ https://us-central1-heropy-api.cloudfunctions.net/api/todos
 
 ```curl
 curl -X 'PUT' \ 
-https://us-central1-heropy-api.cloudfunctions.net/api/todos/:todoId
+https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/:todoId
 ```
 
 ```plaintext
@@ -226,7 +226,7 @@ https://us-central1-heropy-api.cloudfunctions.net/api/todos/:todoId
 
 ```curl
 curl -X 'DELETE' \ 
-https://us-central1-heropy-api.cloudfunctions.net/api/todos/:todoId
+https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/:todoId
 ```
 
 ```plaintext
