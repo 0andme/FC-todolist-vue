@@ -4,11 +4,29 @@
     "node": true
   },
   "extends": [
-    "eslint:recommended"
+    "eslint:recommended",
+    "plugin:vue/vue3-recommended"
   ],
-  "parser": "@babel/eslint-parser",
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser":"@babel/eslint-parser",
+    "sourceType": "module"
+  },
   "rules": {
     "semi": ["error", "never"],
-    "quotes": ["error", "single"]
+    "quotes": ["error", "single"],
+    "vue/html-self-closing": ["error", {
+      "html": {
+        "void": "always",
+        "normal": "never",
+        "component": "always"
+      },
+      "svg": "always",
+      "math": "always"
+    }],
+    "vue/html-closing-bracket-newline": ["error", {
+      "singleline": "never",
+      "multiline": "never"
+    }]
   }
 }
