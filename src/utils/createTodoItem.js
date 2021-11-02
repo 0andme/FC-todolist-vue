@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export async function createTodo(title,order) {
+export async function createTodoItem(title,order) {
   const { data } = await axios({
     url: 'https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos',
     method: 'POST',
