@@ -1,13 +1,15 @@
 <template>
-  <h1>{{ message }}</h1>
+<!-- 헤더 -->
+<TodoListBox/>
+<!-- footer -->
 </template>
 
 <script>
+import TodoListBox from '~/components/TodoListBox'
+
 export default {
-  data() {
-    return {
-      message: 'Hello Vue SFC!'
-    }
+  components:{
+    TodoListBox
   }
 }
 </script>
