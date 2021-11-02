@@ -1,3 +1,5 @@
+// 타이틀과 순서를 매개변수로 받아 todo리스트의 아이템을 생성
+// 생성된 아이템 객체를 반환하는 함수
 import axios from "axios"
 
 export async function createTodoItem(title,order) {
