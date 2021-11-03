@@ -1,4 +1,8 @@
-// TodoListBox로부터 받아온 doneList길이만큼 TodoListItem컴포넌트 생성
+// TodoListDone
+// do리스트를 구성
+// - TodoItemInput 항목 추가 기능 
+// - TodoListController 항목 컨트롤 기능
+// - TodoListItem 항목 아이템 
 
 <template>
 <!-- done 제목부분-->
