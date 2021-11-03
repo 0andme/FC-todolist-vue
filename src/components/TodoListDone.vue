@@ -3,6 +3,8 @@
 <template>
 <!-- done 제목부분-->
 <p>Done</p>
+<!-- controller 부분 -->
+<TodoListController :controlList="doneList"/>
 <!-- todo List -->
 <ul class="doneList">
   <li class="doneList__item" v-for="(todo,index) in doneList" :key="todo.id">
@@ -14,12 +16,14 @@
 </template>
 <script>
 import TodoListItem from '~/components/TodoListItem'
+import TodoListController from '~/components/TodoListController'
 
 
 
 export default {
   components:{
-    TodoListItem
+    TodoListItem,
+    TodoListController
   },
   props:{
     doneList:{
