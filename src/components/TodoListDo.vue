@@ -5,7 +5,7 @@
 <!-- Todo 제목부분-->
 <p>Todo</p>
 <!-- input부분 -->
-<TodoInput :todoNum="doList.length"/>
+<TodoItemInput :todoNum="doList.length"/>
 <!-- todo List -->
 <ul class="doList">
   <li class="doList__item" v-for="(todo,index) in doList" :key="todo.id">
@@ -16,14 +16,14 @@
 
 </template>
 <script>
-import TodoInput from '~/components/TodoInput'
+import TodoItemInput from '~/components/TodoItemInput'
 import TodoListItem from '~/components/TodoListItem'
 
 
 
 export default {
   components:{
-    TodoInput,
+    TodoItemInput,
     TodoListItem
   },
   props:{
