@@ -7,17 +7,19 @@
 
 <template>
 <!-- Todo 제목부분-->
-<p>Todo</p>
-<!-- input부분 -->
-<TodoItemInput :todoNum="doList.length"/>
-<!-- controller 부분 -->
-<TodoListController :controlList="doList"/>
-<!-- todo List -->
-<ul class="doList">
-  <li class="doList__item" v-for="(todo,index) in doList" :key="todo.id">
-    <TodoListItem :isCheck="false" :todo="doList[index]"/>
-  </li>
-</ul>
+<div class="listBox">
+  <p class="listBox__Title">Todo</p>
+  <!-- input부분 -->
+  <TodoItemInput :todoNum="doList.length"/>
+  <!-- controller 부분 -->
+  <TodoListController :controlList="doList"/>
+  <!-- todo List -->
+  <ul class="listBox__list do">
+    <li class="listBox__listItem" v-for="(todo,index) in doList" :key="todo.id">
+      <TodoListItem :isCheck="false" :todo="doList[index]"/>
+    </li>
+  </ul>
+</div>
 
 
 </template>
@@ -25,8 +27,6 @@
 import TodoItemInput from '~/components/TodoItemInput'
 import TodoListItem from '~/components/TodoListItem'
 import TodoListController from '~/components/TodoListController'
-
-
 
 export default {
   components:{
@@ -46,8 +46,3 @@ export default {
   }
 }
 </script>
-
-
-<style lang="scss" scoped>
-
-</style>
