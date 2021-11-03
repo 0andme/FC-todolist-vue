@@ -1,6 +1,9 @@
 <template>
 <!-- 헤더 -->
-<TodoListBox/>
+<div class="todoBox">
+  <TodoListBox/>
+</div>
+
 <!-- footer -->
 </template>
 
