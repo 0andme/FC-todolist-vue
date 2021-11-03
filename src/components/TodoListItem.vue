@@ -9,7 +9,7 @@
   <i class="fas fa-times"></i>
 </button>
 <!-- 수정 입력 컴포넌트 -->
-  <TodoListEdit v-if="isEditMode" :todo="todo" @isEditMode="isEditMode=$event"/>
+  <TodoListEdit v-if="isEditMode" :todo="todo" @cancelEditMode="cancelEditMode"/>
 
 </template>
 
@@ -53,6 +53,9 @@ export default {
         .then(()=>{
               location.reload();
             })
+    },
+    cancelEditMode(state){
+      this.isEditMode=state
     }
   }
   
