@@ -1,14 +1,14 @@
+// TodoListBox
 // getTodoList 함수로 받아온 리스트 항목을
 // 항목의 done속성을 이용하여 두개의 리스트로 필터링
 // 리스트를 각각 TodoListDo,TodoListDone 컴포넌트로 보냄
 <template>
-<!-- dolistList -->
+<!-- doList -->
 <TodoListDo :doList="doList"/> 
 <!--  doneList -->
 <TodoListDone :doneList="doneList"/> 
-
-
 </template>
+
 <script>
 import {getTodoList} from "~/utils/getTodoList"
 import TodoListDo from "~/components/TodoListDo"
@@ -27,12 +27,12 @@ export default {
     
     }
   },
-  mounted(){
+  created(){
     getTodoList()
       .then(todos=>{
         this.todoList=[...todos]
-        this.doList=[...todos.filter(todo=>todo.done===false)]
-        this.doneList=[...todos.filter(todo=>todo.done===true)]
+        this.doList=this.todoList.filter(todo=>todo.done===false)
+        this.doneList=this.todoList.filter(todo=>todo.done===true)
         
       })
       
