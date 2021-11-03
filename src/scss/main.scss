@@ -1,3 +1,130 @@
-div {
+@import "reset.scss";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap');
+
+body {
+  width: 100%;
+  height: 100%;
+  min-width:800px;
+
+  background-color: #293b97;
+  font-family: 'Nanum Gothic', sans-serif;
+  
+}
+
+.todoBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 80%;
+  // min-width: 500px;
+  height: 80%;
+  padding: 10px;
+  
   display: flex;
+  
+  border-radius: 20px;
+  background-color: #fff3bf;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+  .listBox {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    box-sizing: border-box;
+    position: relative;    
+    &.done{
+      border-left: 1px dashed #202e74;
+    }
+
+    .listBox__Title { //p
+      height: 10%;
+      font-size: 2em;
+      font-weight: 400;
+    }
+
+    .listBox__list { //ul
+      width: 90%;
+            
+      display: flex;
+      flex-direction: column;
+      
+      position: absolute;
+      top: 20%;
+      bottom: 10px;
+      
+      overflow-y: scroll;
+      &.do{margin-right: 5px;}
+      &.done{margin-left: px;}
+
+      .listBox__listItem {// li
+        $itemHeight: 30px;
+        $itemFontSize: 1rem;
+        width: 100%;
+        height: $itemHeight;
+                
+        display: flex;
+        align-items: center;
+
+        border-radius: 5px;
+
+        // background-color: white;
+        margin-top: 10px;
+        &:first-child{margin-top: 0;}
+
+
+        label{
+          width: 70%;
+          flex-grow: 1;
+          display: flex;
+          align-items: center;
+          
+          
+          .listItem__checkBox {
+            height: $itemHeight;
+            width: $itemHeight;
+          }
+  
+          .listItem__content {
+            width: 87%;
+            line-height: $itemHeight;
+            margin: 0 5px;
+                        
+            text-align: start;
+            vertical-align: middle;
+            font-size: $itemFontSize;
+            color: #212529;
+            background-color: white;
+            overflow-x: scroll;
+          }
+        }
+
+       
+
+        .listItem__btn--edit {
+          width: $itemHeight;
+          height: $itemHeight;
+          font-size: $itemFontSize;
+          color: #293b97;          
+        }
+        .listItem__btn--delete{
+          width: $itemHeight;
+          height: $itemHeight;
+
+          font-size: $itemFontSize;
+          
+          color:#293b97;
+          margin-left: 1px;
+        }
+
+      }
+    }
+  }
+
 }
