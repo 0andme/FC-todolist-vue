@@ -1,24 +1,21 @@
 <template>
 <!-- 수정을 위한 입력과 버튼 -->
-<input
+<!-- Extraneous non-emits event listeners warning 해결을 위한 div-->
+<div> 
+  <input
   type="text"
   placeholder="Edit Todo"
   v-model="editTodoTitle"
   @keyup.enter="editTodoItem"/>
-<button class="doList__btn--edit"  @click="editedItem" >완료</button>
-<button class="doList__btn--edit" @click="$emit('isEditMode',false)">취소</button>
-  
+  <button class="doList__btn--edit"  @click="editedItem" >완료</button>
+  <button class="doList__btn--edit" @click="this.$emit('cancelEditMode',false)">취소</button>
+</div>
 </template>
 <script>
 import {putTodo} from '~/utils/putTodo'
 
 export default {
   props:{
-    isEditMode:{
-      type:Boolean,
-      required : true 
-
-    },
     todo:{
       type:Object,
       required : true 
