@@ -29,9 +29,6 @@ export default {
     return{
       editTodoTitle:'',
       editedTodo:{title:''}
-      // ,
-      // isEditMode=this.isEditMode
-
     }
   },
   created(){
