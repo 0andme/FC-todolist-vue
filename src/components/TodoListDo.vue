@@ -1,5 +1,9 @@
-// 새로운 todo아이템을 만들기 위한 TodoInput 컴포넌트 연결
-// TodoListBox로부터 받아온 doList길이만큼 TodoListItem컴포넌트 생성
+// TodoListDo 
+// do리스트를 구성
+// - TodoItemInput 항목 추가 기능 
+// - TodoListController 항목 컨트롤 기능
+// - TodoListItem 항목 아이템 
+  
 
 <template>
 <!-- Todo 제목부분-->
@@ -40,8 +44,6 @@ export default {
       todo:{}
     }
   }
-  
-  
 }
 </script>
 
