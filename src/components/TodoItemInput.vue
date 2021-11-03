@@ -35,7 +35,7 @@ export default {
       {
         createTodoItem(this.newTodoItemTitle,this.todoNum)
           .then(()=>{
-            location.reload();
+            location.reload()
           })
         this.newTodoItemTitle="" //입력값 초기화
       }
