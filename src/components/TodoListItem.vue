@@ -1,11 +1,13 @@
 <template>
 <label >
-  <input type="checkbox" :checked="isCheck" @change="todochecked(todo)" class="doList__checkBox">
-  <span v-if="!isEditMode">{{todo.title}}</span>
+  <input type="checkbox"  class="listItem__checkBox" :checked="isCheck" @change="todochecked(todo)">
+  <span class="listItem__content" v-if="!isEditMode">{{todo.title}}</span>
 </label>
 <!-- 수정 삭제 버튼 -->
-<button class="doList__btn--edit" v-if="!isEditMode" @click="isEditMode=true">수정</button>
-<button class="doList__btn--delete" v-if="!isEditMode" @click="delTodoItem(todo.id)">
+<button class="listItem__btn--edit" v-if="!isEditMode" @click="isEditMode=true">
+  <i class="fas fa-edit"></i>
+</button>
+<button class="listItem__btn--delete" v-if="!isEditMode" @click="delTodoItem(todo.id)">
   <i class="fas fa-times"></i>
 </button>
 <!-- 수정 입력 컴포넌트 -->
