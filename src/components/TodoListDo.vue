@@ -7,14 +7,14 @@
 
 <template>
 <!-- Todo 제목부분-->
-<div class="listBox">
+<div class="listBox do">
   <p class="listBox__Title">Todo</p>
   <!-- input부분 -->
   <TodoItemInput :todoNum="doList.length"/>
   <!-- controller 부분 -->
   <TodoListController :controlList="doList"/>
   <!-- todo List -->
-  <ul class="listBox__list do">
+  <ul class="listBox__list">
     <li class="listBox__listItem" v-for="(todo,index) in doList" :key="todo.id">
       <TodoListItem :isCheck="false" :todo="doList[index]"/>
     </li>
