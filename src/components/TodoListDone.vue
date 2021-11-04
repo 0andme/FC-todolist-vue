@@ -11,7 +11,7 @@
   <!-- controller 부분 -->
   <TodoListController :controlList="doneList"/>
   <!-- todo List -->
-  <ul class="listBox__list done">
+  <ul class="listBox__list">
     <li class="listBox__listItem" v-for="(todo,index) in doneList" :key="todo.id">
       <TodoListItem :isCheck="true" :todo="doneList[index]"/>
     </li>
@@ -46,7 +46,3 @@ export default {
 }
 </script>
 
-
-<style lang="scss" scoped>
-
-</style>
