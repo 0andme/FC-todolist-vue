@@ -9,8 +9,8 @@ export async function deleteTodo(todoId) {
     method: 'DELETE',
     headers: {
       'content-type': 'application/json',
-      'apikey': 'FcKdtJs202110',
-      'username': 'YouYoungMi'
+      'apikey':  process.env.API_KEY,
+      'username':  process.env.USER_NAME
     }
   })
   // console.log(data)
