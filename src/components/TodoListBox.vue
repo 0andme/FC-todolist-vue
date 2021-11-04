@@ -7,6 +7,11 @@
 <TodoListDo :doList="doList"/> 
 <!--  doneList -->
 <TodoListDone :doneList="doneList"/> 
+<!-- 페이지 새로고침 버튼 -->
+<button class="reloadBtn" @click="reload">
+  <i class="fas fa-redo-alt"></i>
+</button>
+
 </template>
 
 <script>
@@ -36,6 +41,11 @@ export default {
         
       })
       
+  },
+  methodsl:{
+    reload(){
+      location.reload()
+    }
   }
   
 }
