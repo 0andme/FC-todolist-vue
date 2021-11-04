@@ -1,14 +1,14 @@
 <template>
-<label >
+<label v-if="!isEditMode">
   <input type="checkbox"  class="listItem__checkBox" :checked="isCheck" @change="todochecked(todo)">
-  <span class="listItem__content" v-if="!isEditMode">{{todo.title}}</span>
+  <span class="listItem__content" >{{todo.title}}</span>
 </label>
 <!-- 수정 삭제 버튼 -->
-<button class="listItem__btn--edit" v-if="!isEditMode" @click="isEditMode=true">
-  <i class="fas fa-edit"></i>
+<button class="listItem__btn edit" v-if="!isEditMode" @click="isEditMode=true">
+  <i class="fas fa-pen"></i>
 </button>
-<button class="listItem__btn--delete" v-if="!isEditMode" @click="delTodoItem(todo.id)">
-  <i class="fas fa-times"></i>
+<button class="listItem__btn delete" v-if="!isEditMode" @click="delTodoItem(todo.id)">
+  <i class="fas fa-trash-alt"></i>
 </button>
 <!-- 수정 입력 컴포넌트 -->
   <TodoListEdit v-if="isEditMode" :todo="todo" @cancelEditMode="cancelEditMode"/>
@@ -63,6 +63,3 @@ export default {
   
 }
 </script>
-<style lang="scss" scoped>
-
-</style>
