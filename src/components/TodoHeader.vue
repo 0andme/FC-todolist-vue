@@ -29,8 +29,6 @@ export default {
   },
   created(){
     const time = dayjs()
-    console.log(time)
-    // this.month=time.get('montn')
     this.month=time.get('month')+1
     this.day=time.get('day')
     this.week=time.set('d',time.get('d')).format('dddd').toUpperCase()
