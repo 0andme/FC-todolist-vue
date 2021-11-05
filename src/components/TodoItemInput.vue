@@ -29,6 +29,7 @@ export default {
         const title=this.newTodoItemTitle
       
         this.$store.dispatch('tododata/createTodoItem',{title,order})
+        this.newTodoItemTitle=''
       }
       else{this.placeholder="1자 이상 입력 필수"}
 
