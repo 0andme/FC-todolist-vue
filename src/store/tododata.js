@@ -36,7 +36,6 @@ export default{
 
       const replaceIndex = state.todoList.findIndex((todo)=>todo.id===id)
       state.todoList.splice(replaceIndex,1,todo) 
-      console.log(state.todoList)
 
 
 
@@ -111,6 +110,9 @@ export default{
         }
       })
       commit('delData',todoId)  
+    },
+    async deleteAllTodo({state,commit,dispatch}){
+      state.todoList.map((todo)=>dispatch('deleteTodo',todo.id))
     }
 
   }
