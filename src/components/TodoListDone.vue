@@ -11,6 +11,10 @@
   <ul class="listBox__list scroll">
     <li v-for="todo in this.$store.getters['tododata/doneList']" :key="todo.id">
       <TodoListItem :isCheck="true" :item="todo"/>
+      <div class="timeInfo">
+          <span>UPDATE {{this.$store.getters['tododata/updateTime'](todo.id)}} </span>
+          <span>{{this.$store.getters['tododata/delayTime'](todo.id)}} 만에 끝</span>
+        </div>
     </li>
   </ul>
   <div class="emptyMsg" v-if='this.$store.getters["tododata/doneList"].length<1'>
