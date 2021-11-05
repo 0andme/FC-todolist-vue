@@ -1,4 +1,6 @@
 import axios from "axios"
+import dayjs from "dayjs"
+import 'dayjs/locale/ko'
 
 export default{
   namespaced:true,
@@ -13,10 +15,17 @@ export default{
       return state.todoList.filter(todo=>todo.done===true)
     },
     updateTime:(state)=>(id)=>{
-      const todo= state.todoList.find(todo=>todo.id===id)
-      return todo.updatedAt.slice(0,10)
+      // - 항목의 속성을 사용하려고 했는데 실제 날짜랑 안 맞는 부분이 있어
+      // const todo= state.todoList.find(todo=>todo.id===id)
+      // return todo.updatedAt.slice(0,10)
+      // - 업데이트 부분만 dayjs를 사용
+      dayjs.locale('ko')
+      return dayjs().format('YYYY-MM-DD')
+      
     },
     delayTime:(state)=>(id)=>{
+      //- 시간 차를 구하는 부분이라 dayjs를 사용하지 않고
+      //- 항목의 속성값을 이용하는 방향으로 결정 
       const todo= state.todoList.find(todo=>todo.id===id)
       const hour=parseInt(todo.updatedAt.slice(11,13))-parseInt(todo.createdAt.slice(11,13))
       const min=parseInt(todo.updatedAt.slice(14,16))-parseInt(todo.createdAt.slice(14,16))
