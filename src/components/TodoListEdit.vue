@@ -33,11 +33,10 @@ export default {
   },
   data(){
     return{
-      editTodoTitle:'',
+      editTodoTitle:this.item.title,
       placeholder:'Edit Todo'
     }
   },
-
   methods:{
     editedItem(){
       if(this.editTodoTitle.length>0){
