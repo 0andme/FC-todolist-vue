@@ -15,7 +15,6 @@
   
 </template>
 <script>
-import {deleteAllTodo} from '~/utils/index'
 
 export default {
   props:{

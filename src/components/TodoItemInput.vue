@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import {createTodoItem}from "~/utils/createTodoItem"
 
 export default {
   data(){
