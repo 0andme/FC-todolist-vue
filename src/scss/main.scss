@@ -213,9 +213,11 @@ body {
   
             input {
               width: 70%;
+              height: 25px;
               flex-grow: 1;
-              line-height: 28px;
+              line-height: 25px;
               margin-right: 5px;
+              border-bottom: 1px solid;
               background-color: #fff;
             }
           }
