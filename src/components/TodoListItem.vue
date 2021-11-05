@@ -1,3 +1,7 @@
+//TodoListItem
+//li태그내 요소들을 구성
+// 체크 박스 + 입력요소 + 두개의 버튼 요소 + 기본적으로 가려져있는 수정을 위한 ui컴포넌트
+
 <template>
 <label v-if="!isEditMode">
   <input type="checkbox"  class="listItem__checkBox" :checked="isCheck" @change="todochecked()">

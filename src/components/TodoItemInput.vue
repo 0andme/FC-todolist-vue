@@ -1,3 +1,7 @@
+// TodoItemInput
+// - 입력 요소
+// - 버튼 요소
+// 사용자로부터 값을 입력받고 todo항목을 추가
 <template>
   <div class="inputTodoItem">
     <!-- 입력창 -->
