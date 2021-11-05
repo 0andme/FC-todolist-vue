@@ -12,6 +12,7 @@
         <TodoListItem :isCheck="false" :item="todo"/>
     </li>
   </ul>
+  <span class="emptyMsg" v-if='this.$store.getters["tododata/doList"].length<1'>오늘 할 일이 없던가🤔</span>
 </div>
 
 

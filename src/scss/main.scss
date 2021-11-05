@@ -126,7 +126,12 @@ header{
         align-items: center;
   
       }
-  
+      .emptyMsg{
+        position: absolute;
+        top: 50%;
+        color: #868e96;
+        font-size: 14px;
+      }
   
       .listBox__list {
         // width: 95%;
@@ -154,6 +159,7 @@ header{
           /* 크롬 사파리*/
           display: none;
         }
+        
   
   
         .listBox__listItem {
