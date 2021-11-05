@@ -11,6 +11,26 @@ export default{
     },
     doneList(state){
       return state.todoList.filter(todo=>todo.done===true)
+    },
+    updateTime:(state)=>(id)=>{
+      const todo= state.todoList.find(todo=>todo.id===id)
+      return todo.updatedAt.slice(0,10)
+    },
+    delayTime:(state)=>(id)=>{
+      const todo= state.todoList.find(todo=>todo.id===id)
+      const hour=parseInt(todo.updatedAt.slice(11,13))-parseInt(todo.createdAt.slice(11,13))
+      const min=parseInt(todo.updatedAt.slice(14,16))-parseInt(todo.createdAt.slice(14,16))
+      const time=hour*60+min
+      if(time<60)
+      {
+        return `${time}분`
+      }
+      else if(time<1440){
+        return `${parseInt(time/60)}시간${time%60}분`
+      }  
+      else{
+        return `${parseInt(time/1440)}일${parseInt(time%1440/60)}시간${time%1440%60}분`
+      }
     }
 
   },
