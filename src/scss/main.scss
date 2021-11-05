@@ -168,13 +168,13 @@ body {
               line-height: 25px;
               margin: 0 5px 0 8px;
   
-              border-bottom: 1px solid;
               box-sizing: border-box;
   
               vertical-align: middle;
               font-size: $itemFontSize;
   
               color: #212529;
+              
   
               overflow-x: scroll;
               &.scroll {
@@ -217,7 +217,7 @@ body {
               flex-grow: 1;
               line-height: 25px;
               margin-right: 5px;
-              border-bottom: 1px solid;
+              box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
               background-color: #fff;
             }
           }
