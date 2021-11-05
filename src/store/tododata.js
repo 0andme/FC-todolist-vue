@@ -101,7 +101,6 @@ export default{
     //- 삭제
     async deleteTodo({commit},payload) {   
       const todoId=payload 
-      console.log('안',todoId)
       await axios({
         url: `https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/${todoId}`,
         method: 'DELETE',
