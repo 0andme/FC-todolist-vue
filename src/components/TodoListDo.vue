@@ -10,13 +10,13 @@
 <div class="listBox do">
   <p class="listBox__Title">Todo</p>
   <!-- input부분 -->
-  <TodoItemInput :todoNum="doList.length"/>
+  <!-- <TodoItemInput /> -->
   <!-- controller 부분 -->
-  <TodoListController :controlList="doList"/>
+  <!-- <TodoListController :controlList="doList"/> -->
   <!-- todo List -->
   <ul class="listBox__list">
-    <li class="listBox__listItem" v-for="(todo,index) in doList" :key="todo.id">
-      <TodoListItem :isCheck="false" :todo="doList[index]"/>
+    <li class="listBox__listItem" v-for="todo in this.$store.getters['tododata/doList']" :key="todo.id">
+      <TodoListItem :isCheck="false" :item="todo"/>
     </li>
   </ul>
 </div>
@@ -24,25 +24,14 @@
 
 </template>
 <script>
-import TodoItemInput from '~/components/TodoItemInput'
 import TodoListItem from '~/components/TodoListItem'
 import TodoListController from '~/components/TodoListController'
 
 export default {
   components:{
-    TodoItemInput,
     TodoListItem,
     TodoListController
-  },
-  props:{
-    doList:{
-      type:Array
-    }
-  },
-  data(){
-    return {
-      todo:{}
-    }
   }
 }
 </script>
+

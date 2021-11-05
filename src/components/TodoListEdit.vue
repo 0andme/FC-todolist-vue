@@ -4,9 +4,9 @@
 <div class="editBox"> 
   <input
   type="text"
-  placeholder="Edit Todo"
+  :placeholder="placeholder"
   v-model="editTodoTitle"
-  @keyup.enter="editTodoItem"/>
+  @keyup.enter="editedItem"/>
   <button class="listItem__btn edited"  @click="editedItem" >
     <i class="fas fa-check"></i>
   </button>
@@ -16,11 +16,10 @@
 </div>
 </template>
 <script>
-import {putTodo} from '~/utils/putTodo'
 
 export default {
   props:{
-    todo:{
+    item:{
       type:Object,
       required : true 
       
@@ -29,21 +28,24 @@ export default {
   data(){
     return{
       editTodoTitle:'',
-      editedTodo:{title:''}
+      placeholder:'Edit Todo'
     }
-  },
-  created(){
-    this.editedTodo={...this.todo}
-    this.editTodoTitle=this.todo.title 
   },
 
   methods:{
     editedItem(){
-      this.editedTodo.title=this.editTodoTitle
-      putTodo(this.editedTodo)
-        .then(()=>{
-              location.reload();
-            })      
+      if(this.editTodoTitle.length>0){
+        this.item.title=this.editTodoTitle
+        this.$store.dispatch('tododata/editTodoItem',this.item)
+        this.$emit('cancelEditMode',false)
+
+      }
+      else{
+        this.placeholder='1자 이상 입력 필수'
+
+      }
+      
+
     }
 
   }

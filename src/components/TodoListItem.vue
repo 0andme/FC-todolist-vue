@@ -1,22 +1,22 @@
 <template>
 <label v-if="!isEditMode">
-  <input type="checkbox"  class="listItem__checkBox" :checked="isCheck" @change="todochecked(todo)">
-  <span class="listItem__content" >{{todo.title}}</span>
+  <input type="checkbox"  class="listItem__checkBox" :checked="isCheck" @change="todochecked()">
+  <span class="listItem__content" >{{item.title}}</span>
 </label>
-<!-- 수정 삭제 버튼 -->
+<!-- 수정 버튼 -->
 <button class="listItem__btn edit" v-if="!isEditMode" @click="isEditMode=true">
   <i class="fas fa-pen"></i>
 </button>
-<button class="listItem__btn delete" v-if="!isEditMode" @click="delTodoItem(todo.id)">
+<!-- 삭제 버튼 -->
+<button class="listItem__btn delete" v-if="!isEditMode" @click="delTodoItem">
   <i class="fas fa-trash-alt"></i>
 </button>
 <!-- 수정 입력 컴포넌트 -->
-  <TodoListEdit v-if="isEditMode" :todo="todo" @cancelEditMode="cancelEditMode"/>
+  <TodoListEdit v-if="isEditMode" :item="item" @cancelEditMode="cancelEditMode"/>
 
 </template>
 
 <script>
-import {deleteTodo,putTodo }from "~/utils/index"
 import TodoListEdit from '~/components/TodoListEdit.vue'
 
 export default {
@@ -29,10 +29,9 @@ export default {
       required:true
       
     },
-    todo:{
+    item:{
       type:Object,
-      required : true 
-      
+      required:true
     }
   },
   data(){
@@ -42,19 +41,19 @@ export default {
     }
   },
   methods:{
-    todochecked(todo){
-      todo.done=!todo.done
-      putTodo(todo)
-        .then(()=>{
-              location.reload();
-            })  
-      
+    todochecked(){
+      this.item.done=!this.item.done
+      this.$store.dispatch('tododata/editTodoItem',this.item)
+
+
+
     },
-    delTodoItem(todoId){
-      deleteTodo(todoId)
-        .then(()=>{
-              location.reload();
-            })
+    delTodoItem(){
+      console.log('밖',this.item.id)
+
+      this.$store.dispatch('tododata/deleteTodo',this.item.id)
+
+      
     },
     cancelEditMode(state){
       this.isEditMode=state

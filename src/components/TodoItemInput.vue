@@ -3,7 +3,7 @@
     <!-- 입력창 -->
     <input
       type="text"
-      placeholder="Add your new Todo"
+      :placeholder=placeholder
       v-model="newTodoItemTitle"
       @keyup.enter="addTodoItem"/>
     <!-- add 버튼-->
@@ -17,32 +17,25 @@
 import {createTodoItem}from "~/utils/createTodoItem"
 
 export default {
-  props:{
-    todoNum:{
-      type:Number,
-      required : true 
-    }
-  },
   data(){
     return{
-      newTodoItemTitle:''
+      newTodoItemTitle:'',
+      placeholder:"Add your new Todo"
     }
   },
   methods:{
     addTodoItem(){
-      // 공백이 아닐 때
-      if(this.newTodoItemTitle!=='') 
-      {
-        createTodoItem(this.newTodoItemTitle,this.todoNum)
-          .then(()=>{
-            location.reload()
-          })
-        this.newTodoItemTitle="" //입력값 초기화
+      if(this.newTodoItemTitle.length>0){
+        const order=this.$store.state.tododata.todoList.length
+        const title=this.newTodoItemTitle
+      
+        this.$store.dispatch('tododata/createTodoItem',{title,order})
       }
-      //입력받은 값이 공백일때
+      else{this.placeholder="1자 이상 입력 필수"}
 
-    }
+  
   }
   
+  }
 }
 </script>
