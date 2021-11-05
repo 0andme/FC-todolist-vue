@@ -139,6 +139,18 @@ body {
         right: 10px;
   
         overflow-y: scroll;
+
+        &.scroll {
+          -ms-overflow-style: none;
+          /* Internet Explorer */
+          scrollbar-width: none;
+          /* Firefox 64 */
+        }
+        
+        &.scroll::-webkit-scrollbar {
+          /* 크롬 사파리*/
+          display: none;
+        }
   
   
         .listBox__listItem {
@@ -189,6 +201,17 @@ body {
               // background-color: #fff3bf;
   
               overflow-x: scroll;
+              &.scroll {
+                -ms-overflow-style: none;
+                /* Internet Explorer */
+                scrollbar-width: none;
+                /* Firefox 64 */
+              }
+              
+              &.scroll::-webkit-scrollbar {
+                /* 크롬 사파리*/
+                display: none;
+              }
             }
           }
   
