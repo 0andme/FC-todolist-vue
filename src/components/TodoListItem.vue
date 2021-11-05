@@ -1,7 +1,7 @@
 <template>
 <label v-if="!isEditMode">
   <input type="checkbox"  class="listItem__checkBox" :checked="isCheck" @change="todochecked()">
-  <span class="listItem__content" >{{item.title}}</span>
+  <span class="listItem__content scroll" >{{item.title}}</span>
 </label>
 <!-- 수정 버튼 -->
 <button class="listItem__btn edit" v-if="!isEditMode" @click="isEditMode=true">
