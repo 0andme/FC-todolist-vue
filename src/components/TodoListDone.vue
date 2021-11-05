@@ -9,7 +9,7 @@
   <p class="listBox__Title">Done</p>
   <!-- todo List -->
   <ul class="listBox__list scroll">
-    <li class="listBox__listItem" v-for="todo in this.$store.getters['tododata/doneList']" :key="todo.id">
+    <li v-for="todo in this.$store.getters['tododata/doneList']" :key="todo.id">
       <TodoListItem :isCheck="true" :item="todo"/>
     </li>
   </ul>

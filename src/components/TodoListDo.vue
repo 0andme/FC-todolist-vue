@@ -8,8 +8,8 @@
 <div class="listBox do">
   <p class="listBox__Title">Todo</p>
   <ul class="listBox__list scroll">
-    <li class="listBox__listItem" v-for="todo in this.$store.getters['tododata/doList']" :key="todo.id">
-      <TodoListItem :isCheck="false" :item="todo"/>
+    <li v-for="todo in this.$store.getters['tododata/doList']" :key="todo.id">
+        <TodoListItem :isCheck="false" :item="todo"/>
     </li>
   </ul>
 </div>
