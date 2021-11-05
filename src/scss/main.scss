@@ -10,13 +10,38 @@ body {
   font-family: 'Nanum Gothic', sans-serif;
 
 }
+header{
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  height: 10%;
+  transform: translate(-50%,60%);
+  text-align: center;
+  width: 70%;
+
+  p{
+    color: #f03e3e;
+    font-size: 3rem;
+  }
+  .times{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+    div{
+      padding: 0 1px;
+    }
+  }
+
+}
 
 
 .todoBox {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -34%);
+  transform: translate(-50%, -40%);
 
   width: 70%;
   height: 70%;
