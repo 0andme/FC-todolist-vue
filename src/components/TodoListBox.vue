@@ -9,8 +9,7 @@
   <TodoListDo /> 
   <TodoListDone/> 
 </div>
-
-  <TodoListController :controlList="doList"/>
+  <TodoListController/>
 </template>
 
 <script>
@@ -21,7 +20,6 @@ import TodoListController from '~/components/TodoListController'
 
 export default {
   components:{
-    
     TodoListDo,
     TodoListDone,
     TodoItemInput,
