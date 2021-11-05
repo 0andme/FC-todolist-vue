@@ -53,8 +53,8 @@ export default{
         method: 'GET',
         headers: {
           'content-type': 'application/json',
-          'apikey': process.env.API_KEY,
-          'username':  process.env.USER_NAME
+          'apikey': 'FcKdtJs202110', //process.env.API_KEY,
+          'username':'YouYoungMi'  //process.env.USER_NAME
         }
       })
       commit('reloadData',data)
@@ -68,8 +68,8 @@ export default{
         method: 'POST',
         headers: {
           'content-type': 'application/json',
-          'apikey':  process.env.API_KEY,
-          'username':  process.env.USER_NAME
+          'apikey': 'FcKdtJs202110', //process.env.API_KEY,
+          'username': 'YouYoungMi' //process.env.USER_NAME
         },
         data: {
           title,
@@ -86,8 +86,8 @@ export default{
         method: 'PUT',
         headers: {
           'content-type': 'application/json',
-          'apikey':  process.env.API_KEY,
-          'username':  process.env.USER_NAME
+          'apikey': 'FcKdtJs202110', //process.env.API_KEY,
+          'username': 'YouYoungMi' //process.env.USER_NAME
         },
         data: {
           title,
@@ -106,8 +106,8 @@ export default{
         method: 'DELETE',
         headers: {
           'content-type': 'application/json',
-          'apikey':  process.env.API_KEY,
-          'username':  process.env.USER_NAME
+          'apikey': 'FcKdtJs202110', //process.env.API_KEY,
+          'username': 'YouYoungMi' //process.env.USER_NAME
         }
       })
       commit('delData',todoId)  
