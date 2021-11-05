@@ -4,8 +4,6 @@
 // -리스트 요소
 // -컨트롤 버튼 요소
 <template>
-<!--  -->
-<TodoItemInput />
 
 <div class="listBoxWrap">
   <TodoListDo /> 
@@ -23,9 +21,10 @@ import TodoListController from '~/components/TodoListController'
 
 export default {
   components:{
-    TodoItemInput,
+    
     TodoListDo,
     TodoListDone,
+    TodoItemInput,
     TodoListController
   }
 }
