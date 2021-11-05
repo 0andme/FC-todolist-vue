@@ -163,19 +163,18 @@ body {
   
             .listItem__content {
               width: 80%;
-              height: 28px;
+              height: 25px;
               flex-grow: 1;
-              line-height: 28px;
-              margin: 0 5px;
+              line-height: 25px;
+              margin: 0 5px 0 8px;
   
-              border-radius: 3px;
+              border-bottom: 1px solid;
               box-sizing: border-box;
   
               vertical-align: middle;
               font-size: $itemFontSize;
   
               color: #212529;
-              // background-color: #fff3bf;
   
               overflow-x: scroll;
               &.scroll {
