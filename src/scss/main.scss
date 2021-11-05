@@ -11,6 +11,7 @@ body {
 
 }
 
+
 .todoBox {
   position: absolute;
   top: 50%;
@@ -22,189 +23,209 @@ body {
   padding: 10px;
 
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   border-radius: 20px;
   background-color: #fff3bf;
   box-sizing: border-box;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
-  .listBox {
-    $itemHeight: 30px;
-    $itemFontSize: 1rem;
-
-    width: 50%;
-    height: 100%;
-
+  
+  .inputTodoItem {
+    width: 95%;
+    height: 10%;
+    margin: 0 auto;
+    padding-left: 5px;
+    background-color: #fff;
     display: flex;
-    flex-direction: column;
     align-items: center;
-
-    box-sizing: border-box;
-    position: relative;
-
-    &.do {
-      margin-right: 5px;
+    margin-top: 5px;
+    
+  
+    input {
+      width: 80%;
+      flex-grow: 1;
     }
-
-    &.done {
-      margin-left: px;
-      border-left: 1px dashed #202e74;
-
+  
+    .inputBtn {
+      width: 10%;
+      height: 100%;
+      font-size: 1rem;
+      background-color: #293b97;
+      color: #fff;
     }
+  
+  
+  }
 
-    .listBox__Title {
-      //p
-
-      height: 10%;
-      font-size: 1.5em;
-      font-weight: 400;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-
-    }
-
-    .inputTodoItem {
-      width: 90%;
-      height: 10%;
-
-      background-color: #fff;
-      display: flex;
-      align-items: center;
-      margin-top: 5px;
-
-      input {
-        flex-grow: 1;
-      }
-
-      .inputBtn {
-        width: 30px;
-        height: 30px;
-        font-size: 1rem;
-        color: #293b97;
-      }
+  .listBoxWrap{
+    display: flex;
+    width: 95%;
+    height: 80%;
+    margin: 10px auto;
+    background-color: #fff;
+    border-radius: 10px;
 
 
-    }
-
-    .controlBox {
-      position: absolute;
-      bottom: 3px;
-      left: 3px;
-      z-index: 1;
-      border-radius: 10px;
-      background-color: #fff;
-
-      .clearBtn {
-        padding-left:10px;
-        font-size: .8rem;
-      }
-
-      .reloadBtn {
-        width: $itemHeight;
-        height: $itemHeight;
-
-        font-size: 1rem;
-        color: #293b97;
-      }
-
-    }
-
-    .listBox__list {
-      width: 90%;
-
+    .listBox {
+      $itemHeight: 30px;
+      $itemFontSize: 1rem;
+  
+      width: 50%;
+  
       display: flex;
       flex-direction: column;
-      padding: 1px;
-
-      position: absolute;
-      top: 25%;
-      bottom: 10px;
-
-      overflow-y: scroll;
-
-
-      .listBox__listItem {
-        // li
-
-        width: 100%;
-        height: $itemHeight;
-
-        display: flex;
-        align-items: center;
-
-        border-radius: 5px;
-
-        // background-color: white;
-        margin-top: 10px;
-
-        &:first-child {
-          margin-top: 0;
-        }
-
-        label {
-          width: 80%;
-          min-width: 50%;
-          flex-grow: 1;
-          display: flex;
-          align-items: center;
-
-
-          .listItem__checkBox {
-            height: $itemHeight;
-            width: $itemHeight;
-          }
-
-          .listItem__content {
-            width: 80%;
-            flex-grow: 1;
-            line-height: 28px;
-            margin: 0 5px;
-
-            border-radius: 3px;
-            box-sizing: border-box;
-
-            vertical-align: middle;
-            font-size: $itemFontSize;
-
-            color: #212529;
-            background-color: #fff;
-
-            overflow-x: scroll;
-          }
-        }
-
-        .listItem__btn {
-          width: $itemHeight;
-          height: $itemHeight;
-          font-size: 1rem;
-          color: #293b97;
-
-          &.delete {
-            margin-left: 1px;
-          }
-
-          &.cancel {
-            margin-left: 1px;
-          }
-        }
-
-        .editBox {
-          width: 100%;
-          display: flex;
-          align-items: center;
-
-          input {
-            width: 70%;
-            flex-grow: 1;
-            line-height: 28px;
-            margin-right: 5px;
-            background-color: #fff;
-          }
-        }
+      align-items: center;
+  
+      box-sizing: border-box;
+      position: relative;
+  
+      &.do {
 
       }
+  
+      &.done {
+        border-left: 1px dashed #293b97;
+  
+      }
+  
+      .listBox__Title {
+        //p
+  
+        height: 10%;
+        font-size: 1.5em;
+        font-weight: 400;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+  
+      }
+  
+      
+      .controlBox {
+        position: absolute;
+        bottom: 3px;
+        left: 3px;
+        z-index: 1;
+        border-radius: 10px;
+        background-color: #fff;
+  
+        .clearBtn {
+          padding-left:10px;
+          font-size: .8rem;
+        }
+  
+        .reloadBtn {
+          width: $itemHeight;
+          height: $itemHeight;
+  
+          font-size: 1rem;
+          color: #293b97;
+        }
+  
+      }
+  
+      .listBox__list {
+        // width: 95%;
+  
+        display: flex;
+        flex-direction: column;
+        padding: 1px;
+  
+        position: absolute;
+        top: 15%;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+  
+        overflow-y: scroll;
+  
+  
+        .listBox__listItem {
+          // li
+  
+          width: 100%;
+          height: $itemHeight;
+  
+          display: flex;
+          align-items: center;
+  
+          border-radius: 5px;
+  
+          // background-color: white;
+          margin-top: 10px;
+  
+          &:first-child {
+            margin-top: 0;
+          }
+  
+          label {
+            width: 80%;
+            min-width: 50%;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+  
+  
+            .listItem__checkBox {
+              height: $itemHeight;
+              width: $itemHeight;
+            }
+  
+            .listItem__content {
+              width: 80%;
+              height: 28px;
+              flex-grow: 1;
+              line-height: 28px;
+              margin: 0 5px;
+  
+              border-radius: 3px;
+              box-sizing: border-box;
+  
+              vertical-align: middle;
+              font-size: $itemFontSize;
+  
+              color: #212529;
+              // background-color: #fff3bf;
+  
+              overflow-x: scroll;
+            }
+          }
+  
+          .listItem__btn {
+            width: $itemHeight;
+            height: $itemHeight;
+            font-size: 1rem;
+            color: #293b97;
+  
+            &.delete {
+              margin-left: 1px;
+            }
+  
+            &.cancel {
+              margin-left: 1px;
+            }
+          }
+  
+          .editBox {
+            width: 100%;
+            display: flex;
+            align-items: center;
+  
+            input {
+              width: 70%;
+              flex-grow: 1;
+              line-height: 28px;
+              margin-right: 5px;
+              background-color: #fff;
+            }
+          }
+  
+        }
+      }
     }
+
   }
+ 
 
 }
