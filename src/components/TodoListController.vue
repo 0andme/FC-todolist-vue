@@ -12,6 +12,13 @@
 <script>
 
 export default {
+  methods:{
+    clearAllListItem(){
+      this.$store.dispatch('tododata/deleteAllTodo')
+
+
+    }
+  }
   
   
 
