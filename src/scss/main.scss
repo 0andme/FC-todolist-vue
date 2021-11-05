@@ -273,3 +273,15 @@ header{
   }
 
 }
+footer{
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+
+  transform: translateX(-50%);
+  text-align: center;
+  width: 70%;
+  font-size: .8rem;
+  color: #fff3bf ;
+  opacity: .6;
+}
