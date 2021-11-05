@@ -3,9 +3,7 @@ import axios from "axios"
 export default{
   namespaced:true,
   state:()=>({
-    todoList:[],
-    // doList:[],
-    // doneList:[],
+    todoList:[]
   }),
   getters:{
     doList(state){
@@ -19,8 +17,6 @@ export default{
   mutations:{ // state를 직접 변경하는 함수만 쓸 것
     reloadData(state,todos){ // 데이터 다시 가져오기
       state.todoList=[...todos]
-      //state.doList= state.todoList.filter(todo=>todo.done===false)
-      //state.doneList= state.todoList.filter(todo=>todo.done===true)
       
     },
     addData(state,newtodo){
@@ -33,13 +29,8 @@ export default{
     },
     editData(state,todo){
       const {id} = todo
-
       const replaceIndex = state.todoList.findIndex((todo)=>todo.id===id)
       state.todoList.splice(replaceIndex,1,todo) 
-
-
-
-
     }
     
   },
@@ -111,6 +102,7 @@ export default{
       })
       commit('delData',todoId)  
     },
+    //- 전부 삭제
     async deleteAllTodo({state,commit,dispatch}){
       state.todoList.map((todo)=>dispatch('deleteTodo',todo.id))
     }
