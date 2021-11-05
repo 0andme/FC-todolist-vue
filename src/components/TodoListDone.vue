@@ -11,7 +11,7 @@
   <!-- controller 부분 -->
   <!-- <TodoListController :controlList="doneList"/> -->
   <!-- todo List -->
-  <ul class="listBox__list">
+  <ul class="listBox__list scroll">
     <li class="listBox__listItem" v-for="todo in this.$store.getters['tododata/doneList']" :key="todo.id">
       <TodoListItem :isCheck="true" :item="todo"/>
     </li>
