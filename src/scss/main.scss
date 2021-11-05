@@ -262,6 +262,15 @@ header{
           }
   
         }
+        .timeInfo{
+          height: 20px;
+          display: flex;
+          align-items: center;
+          font-size: .2rem;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          color: #868e96;
+        }
       }
     }
 
