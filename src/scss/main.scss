@@ -130,7 +130,14 @@ header{
         position: absolute;
         top: 50%;
         color: #868e96;
-        font-size: 14px;
+        font-size: .8rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        img{
+          margin-left: 3px;
+          width: 16px;
+        }
       }
   
       .listBox__list {

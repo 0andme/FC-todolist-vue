@@ -13,7 +13,10 @@
       <TodoListItem :isCheck="true" :item="todo"/>
     </li>
   </ul>
-  <span class="emptyMsg" v-if='this.$store.getters["tododata/doneList"].length<1'>오늘 뭐했지?🤔</span>
+  <div class="emptyMsg" v-if='this.$store.getters["tododata/doneList"].length<1'>
+      <span>오늘 뭐했지?</span>
+      <img src="/images/thinking_face.png" alt="🤔">
+  </div>
 
 </div>
 
