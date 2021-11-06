@@ -6,9 +6,10 @@ export async function getTodo() {
     method: 'GET',
     headers: {
       'content-type': 'application/json',
-      'apikey': API_KEY,
-      'username':  USER_NAME
+      'apikey': 'FcKdtJs202110',
+      'username':  'YouYoungMi'
     }
   })
   return data
 }
+

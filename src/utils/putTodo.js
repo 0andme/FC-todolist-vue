@@ -9,8 +9,8 @@ export async function putTodo({id,title,done,order}) {
     method: 'PUT',
     headers: {
       'content-type': 'application/json',
-      'apikey':  process.env.API_KEY,
-      'username':  process.env.USER_NAME
+      'apikey':  'FcKdtJs202110',
+      'username':  'YouYoungMi'
     },
     data: {
       title,

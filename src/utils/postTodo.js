@@ -8,8 +8,8 @@ export async function postTodo(title,order) {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
-      'apikey':  process.env.API_KEY,
-      'username':  process.env.USER_NAME
+      'apikey':  'FcKdtJs202110',
+      'username':  'YouYoungMi'
     },
     data: {
       title,
