@@ -12,6 +12,8 @@
   transform: translate(25%,25%);
   display: flex;
   justify-content: center;
+  z-index: 1;
+
 .loader__item {
   $loaderSize: 80px;
   width: $loaderSize;
@@ -21,7 +23,6 @@
   margin-top: calc(-#{$loaderSize}/2);
   margin-left: calc(-#{$loaderSize}/2);
 
-  z-index: 1;
   border-width: 20px;
   border-style: solid;
   border-color:#f03e3e;
