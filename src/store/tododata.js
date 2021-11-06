@@ -91,13 +91,10 @@ export default{
         
     },
     //- 전부 삭제
-    async deleteAllTodo({state,commit}){
-      // 기존에는 위의 deleteTodo함수를 불러왔는데
+    async deleteAllTodo({state,commit,dispatch}){
       // 비동기함수를 여러 차례에 걸쳐 부르니까 화면상에 항목들이 지워지는 게 아주 천천히 나타남
       // 하나가 지워져야 화면에 하나 사라지고..
-      // 아래 코드로 클리어버튼 누르면 바로 화면에서 전부 사라질 수 있도록 했음
-      state.todoList.map((todo)=>delTodo(todo))
-      commit('delAllData')
+      state.todoList.map((todo)=>dispatch('deleteTodo',todo.id))
 
     }
 
