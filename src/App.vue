@@ -33,7 +33,6 @@ export default {
     }
   },
     mounted(){
-      console.log('wjs',this.fetched)
       this.$store.dispatch('tododata/getTodoList').then(()=>{
       //로딩 애니메이션이 너무 빨리 사라져서 딜레이 줌
       setTimeout(()=>{this.fetched=true},500)
