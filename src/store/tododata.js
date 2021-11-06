@@ -1,6 +1,6 @@
 import dayjs from "dayjs"
 import 'dayjs/locale/ko'
-import {getTodo,postTodo,putTodo,deleteTodo}from '~/utils'
+
 export default{
   namespaced:true,
   state:()=>({
@@ -44,7 +44,8 @@ export default{
   },
   mutations:{ // state를 직접 변경하는 함수만 쓸 것
     reloadData(state,todos){ // 데이터 다시 가져오기
-      state.todoList=[...todos]   
+      state.todoList=[...todos]
+      
     },
     addData(state,newtodo){
       state.todoList.push(newtodo)
@@ -65,31 +66,73 @@ export default{
 
     //- TODO 항목 가져오기
     async getTodoList({commit}) {
-      getTodo().then((res)=>{ 
-        commit('reloadData',res)
+      const { data } = await axios({
+        url: 'https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos',
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+          'apikey': 'FcKdtJs202110', //process.env.API_KEY,
+          'username':'YouYoungMi'  //process.env.USER_NAME
+        }
       })
-      
+      commit('reloadData',data)
     },
     //- TODO항목 추가
     async createTodoItem({commit},payload) {
       const {title,order}=payload
-      postTodo(title,order).then(data=>{ commit('addData',data)  })
-     
+
+      const { data } = await axios({
+        url: 'https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos',
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'apikey': 'FcKdtJs202110', //process.env.API_KEY,
+          'username': 'YouYoungMi' //process.env.USER_NAME
+        },
+        data: {
+          title,
+          order
+        }
+      })
+      commit('addData',data)  
     },
     //- TODO항목 수정 
     async editTodoItem({commit},payload) {
-      //payload = todo
-      putTodo(payload).then(data=>{commit('editData',data)})
+      const {id,title,done,order}=payload
+      const { data } = await axios({
+        url: `https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/${id}`,
+        method: 'PUT',
+        headers: {
+          'content-type': 'application/json',
+          'apikey': 'FcKdtJs202110', //process.env.API_KEY,
+          'username': 'YouYoungMi' //process.env.USER_NAME
+        },
+        data: {
+          title,
+          done,
+          order
+        }
+      })
 
+      commit('editData',data)  
     },
     //- 삭제
-    async deleteTodoItem({commit},payload) {   
-      // payload = todoId 
-      deleteTodo(payload).then(()=>commit('delData',payload))  
+    async deleteTodo({commit},payload) {   
+      const todoId=payload 
+      await axios({
+        url: `https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/${todoId}`,
+        method: 'DELETE',
+        headers: {
+          'content-type': 'application/json',
+          'apikey': 'FcKdtJs202110', //process.env.API_KEY,
+          'username': 'YouYoungMi' //process.env.USER_NAME
+        }
+      })
+      commit('delData',todoId)  
     },
     //- 전부 삭제
     async deleteAllTodo({state,commit,dispatch}){
-      state.todoList.map((todo)=>dispatch('deleteTodoItem',todo.id))
+      state.todoList.map((todo)=>dispatch('deleteTodo',todo.id))
     }
 
   }

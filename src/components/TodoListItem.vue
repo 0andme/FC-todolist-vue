@@ -52,7 +52,7 @@ export default {
     },
     delTodoItem(){
 
-      this.$store.dispatch('tododata/deleteTodoItem',this.item.id) 
+      this.$store.dispatch('tododata/deleteTodo',this.item.id) 
     },
     cancelEditMode(state){
       this.isEditMode=state
