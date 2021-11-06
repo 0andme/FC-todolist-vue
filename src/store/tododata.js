@@ -1,4 +1,3 @@
-import axios from "axios"
 import dayjs from "dayjs"
 import 'dayjs/locale/ko'
 import {getTodo,postTodo,putTodo,deleteTodo}from '~/utils'
