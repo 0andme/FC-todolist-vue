@@ -6,8 +6,8 @@ export async function getTodo() {
     method: 'GET',
     headers: {
       'content-type': 'application/json',
-      'apikey': process.env.API_KEY,
-      'username':  process.env.USER_NAME
+      'apikey': API_KEY,
+      'username':  USER_NAME
     }
   })
   return data
