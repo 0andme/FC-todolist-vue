@@ -24,7 +24,7 @@
   z-index: 1;
   border-width: 20px;
   border-style: solid;
-  border-color: #f03e3e;
+  border-color:#fff;
   border-radius: 50%;
   border-top-color: transparent;
 
