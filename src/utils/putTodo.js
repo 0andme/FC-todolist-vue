@@ -18,6 +18,6 @@ export async function putTodo({id,title,done,order}) {
       order
     }
   })
-  
+  return data
   //console.log(data)
 }

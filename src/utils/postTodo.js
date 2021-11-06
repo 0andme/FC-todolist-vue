@@ -2,7 +2,7 @@
 // 생성된 아이템 객체를 반환하는 함수
 import axios from "axios"
 
-export async function createTodoItem(title,order) {
+export async function postTodo(title,order) {
   const { data } = await axios({
     url: 'https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos',
     method: 'POST',
@@ -17,5 +17,5 @@ export async function createTodoItem(title,order) {
     }
   })
   //console.log(data)
-  //return data
+  return data
 }

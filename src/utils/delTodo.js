@@ -3,7 +3,7 @@
 
 import axios from "axios"
 
-export async function deleteTodo(todoId) {
+export async function delTodo(todoId) {
   const { data } = await axios({
     url: `https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/${todoId}`,
     method: 'DELETE',
