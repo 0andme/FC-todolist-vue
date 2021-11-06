@@ -54,7 +54,12 @@ module.exports = (env, options) => {
       new VueLoaderPlugin(),
       new Dotenv({
         path:'./.env'
+      }),
+      new webpack.DefinePlugin({
+        API_KEY: JSON.stringify(process.env.API_KEY),
+        USER_NAME: JSON.stringify(process.env.USER_NAME)
       })
+
     ],
     // devServer: {
     //   port: 8080,
