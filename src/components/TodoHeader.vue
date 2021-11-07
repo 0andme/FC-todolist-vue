@@ -29,11 +29,15 @@ export default {
   },
   created(){
     const time = dayjs()
+    console.log('time',time)
+    // 월 데이터 가져오기-두자리로 변경
     this.month=time.get('month')+1
-    this.day=time.get('day')
-    this.week=time.set('d',time.get('d')).format('dddd').toUpperCase()
     this.month=this.month>=10?this.month+'/': '0'+this.month+'/'
+    // 일 데이터 가져와서 두자리로 변경
+    this.day=time.get('D')
     this.day=this.day>=10?this.day+'/': '0'+this.day+'/'
+    // 요일 데이터 가져오기- 대문자로 
+    this.week=time.set('d',time.get('d')).format('dddd').toUpperCase()
 
     
 
