@@ -29,7 +29,6 @@ export default {
   },
   created(){
     const time = dayjs()
-    console.log('time',time)
     // 월 데이터 가져오기-두자리로 변경
     this.month=time.get('month')+1
     this.month=this.month>=10?this.month+'/': '0'+this.month+'/'
