@@ -13,7 +13,7 @@
       <TodoListItem :isCheck="true" :item="todo"/>
       <div class="timeInfo">
           <span>UPDATE {{this.$store.getters['tododata/updateTime'](todo.id)}} </span>
-          <span>{{this.$store.getters['tododata/delayTime'](todo.id)}} 만에 끝</span>
+          <span>{{this.$store.getters['tododata/delayTime'](todo.id)}} 걸림</span>
         </div>
     </li>
   </ul>

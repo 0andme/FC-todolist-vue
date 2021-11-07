@@ -36,10 +36,10 @@ export default{
         return `${time}분`
       }
       else if(time<1440){
-        return `${parseInt(time/60)}시간${time%60}분`
+        return `${parseInt(time/60)}시간${parseInt(time%60)}분`
       }  
       else{
-        return `${parseInt(time/1440)}일 이상`
+        return '1일 이상'
       }
     }
 
