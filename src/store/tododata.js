@@ -25,10 +25,12 @@ export default{
     delayTime:(state)=>(id)=>{
       //- 시간 차를 구하는 부분이라 dayjs를 사용하지 않고
       //- 항목의 속성값을 이용하는 방향으로 결정 
+      //- 투두 리스트니까 1일 이상이면 전부 동일 처리함
       const todo= state.todoList.find(todo=>todo.id===id)
+      const day=parseInt(todo.updatedAt.slice(8,10))-parseInt(todo.createdAt.slice(8,10))
       const hour=parseInt(todo.updatedAt.slice(11,13))-parseInt(todo.createdAt.slice(11,13))
       const min=parseInt(todo.updatedAt.slice(14,16))-parseInt(todo.createdAt.slice(14,16))
-      const time=hour*60+min
+      const time=day*1440+hour*60+min
       if(time<60)
       {
         return `${time}분`
@@ -37,7 +39,7 @@ export default{
         return `${parseInt(time/60)}시간${time%60}분`
       }  
       else{
-        return `${parseInt(time/1440)}일${parseInt(time%1440/60)}시간${time%1440%60}분`
+        return `${parseInt(time/1440)}일 이상`
       }
     }
 
