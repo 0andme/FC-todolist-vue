@@ -1,7 +1,12 @@
+//TodoListItem
+//li태그내 요소들을 구성
+// 체크 박스 + 입력요소 + 두개의 버튼 요소 + 기본적으로 가려져있는 수정을 위한 ui컴포넌트
+
 <template>
+<div class="listBox__listItem">
 <label v-if="!isEditMode">
   <input type="checkbox"  class="listItem__checkBox" :checked="isCheck" @change="todochecked()">
-  <span class="listItem__content" >{{item.title}}</span>
+  <span class="listItem__content scroll" >{{item.title}}</span>
 </label>
 <!-- 수정 버튼 -->
 <button class="listItem__btn edit" v-if="!isEditMode" @click="isEditMode=true">
@@ -13,6 +18,7 @@
 </button>
 <!-- 수정 입력 컴포넌트 -->
   <TodoListEdit v-if="isEditMode" :item="item" @cancelEditMode="cancelEditMode"/>
+</div>
 
 </template>
 
@@ -37,23 +43,16 @@ export default {
   data(){
     return{
       isEditMode:false
-      
     }
   },
   methods:{
     todochecked(){
       this.item.done=!this.item.done
       this.$store.dispatch('tododata/editTodoItem',this.item)
-
-
-
     },
     delTodoItem(){
-      console.log('밖',this.item.id)
 
-      this.$store.dispatch('tododata/deleteTodo',this.item.id)
-
-      
+      this.$store.dispatch('tododata/deleteTodo',this.item.id) 
     },
     cancelEditMode(state){
       this.isEditMode=state

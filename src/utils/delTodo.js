@@ -3,14 +3,14 @@
 
 import axios from "axios"
 
-export async function deleteTodo(todoId) {
+export async function delTodo(todoId) {
   const { data } = await axios({
     url: `https://asia-northeast3-heropy-api.cloudfunctions.net/api/todos/${todoId}`,
     method: 'DELETE',
     headers: {
       'content-type': 'application/json',
-      'apikey':  process.env.API_KEY,
-      'username':  process.env.USER_NAME
+      'apikey':  'FcKdtJs202110',
+      'username':  'YouYoungMi'
     }
   })
   // console.log(data)

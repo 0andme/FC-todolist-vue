@@ -1,5 +1,5 @@
-export {getTodoList} from './getTodoList'
-export {createTodoItem} from './createTodoItem'
-export {deleteTodo}from "./deleteTodo"
+export {getTodo} from './getTodo'
+export {postTodo} from './postTodo'
+export {delTodo}from "./delTodo"
 export {putTodo} from './putTodo'
-export {deleteAllTodo} from "./deleteAllTodo"
+// export {deleteAllTodo} from "./deleteAllTodo"

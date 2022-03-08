@@ -4,10 +4,35 @@
 body {
   width: 100%;
   height: 100%;
-  min-width: 800px;
 
   background-color: #293b97;
   font-family: 'Nanum Gothic', sans-serif;
+
+}
+header{
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  height: 10%;
+  transform: translate(-50%,60%);
+  text-align: center;
+  width: 70%;
+
+  p{
+    color: #f03e3e;
+    font-size: 3rem;
+    text-shadow: #fff 1px 2px   ;
+  }
+  .times{
+    color: #fff3bf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+    div{
+      padding: 0 1px;
+    }
+  }
 
 }
 
@@ -18,7 +43,8 @@ body {
   left: 50%;
   transform: translate(-50%, -40%);
 
-  width: 70%;
+  width: 65%;
+  max-width: 800px;
   height: 70%;
   padding: 10px;
 
@@ -50,7 +76,7 @@ body {
     .inputBtn {
       width: 10%;
       height: 100%;
-      font-size: 1rem;
+      font-size: 1.5rem;
       background-color: #293b97;
       color: #fff;
     }
@@ -100,29 +126,18 @@ body {
         align-items: center;
   
       }
-  
-      
-      .controlBox {
+      .emptyMsg{
         position: absolute;
-        bottom: 3px;
-        left: 3px;
-        z-index: 1;
-        border-radius: 10px;
-        background-color: #fff;
-  
-        .clearBtn {
-          padding-left:10px;
-          font-size: .8rem;
+        top: 50%;
+        color: #868e96;
+        font-size: .8rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        img{
+          margin-left: 3px;
+          width: 16px;
         }
-  
-        .reloadBtn {
-          width: $itemHeight;
-          height: $itemHeight;
-  
-          font-size: 1rem;
-          color: #293b97;
-        }
-  
       }
   
       .listBox__list {
@@ -139,6 +154,19 @@ body {
         right: 10px;
   
         overflow-y: scroll;
+
+        &.scroll {
+          -ms-overflow-style: none;
+          /* Internet Explorer */
+          scrollbar-width: none;
+          /* Firefox 64 */
+        }
+        
+        &.scroll::-webkit-scrollbar {
+          /* 크롬 사파리*/
+          display: none;
+        }
+        
   
   
         .listBox__listItem {
@@ -174,21 +202,31 @@ body {
   
             .listItem__content {
               width: 80%;
-              height: 28px;
+              height: 25px;
               flex-grow: 1;
-              line-height: 28px;
-              margin: 0 5px;
+              line-height: 25px;
+              margin: 0 5px 0 8px;
   
-              border-radius: 3px;
               box-sizing: border-box;
   
               vertical-align: middle;
               font-size: $itemFontSize;
   
               color: #212529;
-              // background-color: #fff3bf;
+              
   
               overflow-x: scroll;
+              &.scroll {
+                -ms-overflow-style: none;
+                /* Internet Explorer */
+                scrollbar-width: none;
+                /* Firefox 64 */
+              }
+              
+              &.scroll::-webkit-scrollbar {
+                /* 크롬 사파리*/
+                display: none;
+              }
             }
           }
   
@@ -214,18 +252,58 @@ body {
   
             input {
               width: 70%;
+              height: 25px;
               flex-grow: 1;
-              line-height: 28px;
+              line-height: 25px;
               margin-right: 5px;
+              box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
               background-color: #fff;
             }
           }
   
         }
+        .timeInfo{
+          height: 20px;
+          display: flex;
+          align-items: center;
+          font-size: .2rem;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          color: #868e96;
+        }
       }
     }
 
   }
- 
 
+  .controlBox {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    z-index: 1;
+    border-radius: 10px;
+    background-color: #f03e3e;
+
+    .clearBtn {
+      padding:4px 6px;
+      font-size: .8rem;
+      color: #fff;
+      font-weight: 700;
+    }
+
+
+  }
+
+}
+footer{
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+
+  transform: translateX(-50%);
+  text-align: center;
+  width: 70%;
+  font-size: .8rem;
+  color: #fff3bf ;
+  opacity: .6;
 }

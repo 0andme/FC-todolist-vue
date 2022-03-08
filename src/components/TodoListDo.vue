@@ -1,36 +1,35 @@
 // TodoListDo 
-// do리스트를 구성
-// - TodoItemInput 항목 추가 기능 
-// - TodoListController 항목 컨트롤 기능
-// - TodoListItem 항목 아이템 
+// do 리스트를 구성
+// - 타이틀 요소
+// - ul li 리스트 요소
   
-
 <template>
 <!-- Todo 제목부분-->
 <div class="listBox do">
   <p class="listBox__Title">Todo</p>
-  <!-- input부분 -->
-  <!-- <TodoItemInput /> -->
-  <!-- controller 부분 -->
-  <!-- <TodoListController :controlList="doList"/> -->
-  <!-- todo List -->
-  <ul class="listBox__list">
-    <li class="listBox__listItem" v-for="todo in this.$store.getters['tododata/doList']" :key="todo.id">
-      <TodoListItem :isCheck="false" :item="todo"/>
+  <ul class="listBox__list scroll">
+    <li v-for="todo in this.$store.getters['tododata/doList']" :key="todo.id">
+        <TodoListItem :isCheck="false" :item="todo"/>
+        <div class="timeInfo">
+          <span>UPDATE {{this.$store.getters['tododata/updateTime'](todo.id)}} </span>
+          <span>{{this.$store.getters['tododata/delayTime'](todo.id)}} 미루는 중</span>
+        </div>
     </li>
   </ul>
+  <div class="emptyMsg" v-if='this.$store.getters["tododata/doList"].length<1'>
+      <span>오늘 하루 준비 완료</span>
+      <img src="/images/sunglasses.png" alt="😎">
+  </div>
 </div>
 
 
 </template>
 <script>
 import TodoListItem from '~/components/TodoListItem'
-import TodoListController from '~/components/TodoListController'
 
 export default {
   components:{
-    TodoListItem,
-    TodoListController
+    TodoListItem
   }
 }
 </script>
